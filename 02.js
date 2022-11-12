@@ -21,7 +21,7 @@ function stringMasLarga(strings) {
             str = string[i];
         }
     }
-        return str;
+        return str; 
     
 }
 
