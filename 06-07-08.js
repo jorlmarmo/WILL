@@ -6,28 +6,34 @@
 */
 function crearClasePersona() {
   class Persona {
-    constructor(nombre, edad, hobbies, amigos) {
+    constructor(nombre = '', edad = 0, hobbies = [''], amigos = [{}]) {
       // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+      this.nombre = nombre
+      this.edad = edad
+      this.hobbies = hobbies
+      this.amigos = amigos
 
     }
 
-    addFriend(nombre, edad) {
+    addFriend(nombre = '', edad = 0) { 
       // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
       // No debe retornar nada.
 
       // Tu código aca:
+      this.amigos.push({nombre : nombre, edad});
 
     }
 
-    addHobby(hobby) {
+    addHobby(hobby = ['']) {
       // El método 'addHobby' recibe un string 'hobby' y debe agregarlo al arreglo de hobbies de la persona.
       // No debe retornar nada.
 
       // Tu código aca:
+      this.hubbies.push(hobby);
 
     }
     getFriends() {
@@ -72,6 +78,24 @@ function crearClasePersona() {
 
   return Persona;
 }
+
+const persona = crearClasePersona()
+
+const panchito = new persona (
+  'panchito',
+  10,
+  ['correr','jugar'],
+  [
+    {
+      nombre: 'jorge',
+      edad:20,
+    }
+  ]
+)
+
+panchito.addHobby("Eua");
+
+console.log(panchito)
 
 // No modifiques nada debajo de esta linea //
 
